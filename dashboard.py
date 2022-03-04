@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-# from wordcloud import WordCloud, STOPWORDS
+
 import matplotlib.pyplot as plt
 import plotly.express as px
 
@@ -12,7 +12,7 @@ from numpy import e
 
 import streamlit.components.v1 as components
 
-import time
+
 import setuptools
 
 import time
@@ -27,40 +27,9 @@ st.title ("AMPS system Dashboard")
 st.markdown("This application is a Streamlit dashboard used to AMPS system")
 # st.sidebar.markdown("This application is a Strea
 
-st.write(df.head(10))
-
-# select= st.selectbox( '',('Temeprature1 & Humidity1','Temeprature2 & Humidity2' , 'SoilMoisture', 'VOC', 'CO2'), key='1')
+st.write(df)
 
 
-# if select == 'SoilMoisture':
-
-#     fig = px.scatter(df, x=df['Soil Moisture'], y=df['Date'], marginal_x="histogram", marginal_y="rug", width=700,height=900)
-
-#     # z= spectra_df['score'].plot()
-#     st.plotly_chart(fig)
-
-
-# select= st.selectbox( '',('Temeprature1 & Humidity1','Temeprature2 & Humidity2' , 'SoilMoisture', 'VOC', 'CO2'))
-
-# if select == 'VOC':
-
-#     fig = px.line(df, x=df['Date'], y=df['Temeprature1','Humidity1','Temperature2','Humidity2','Soil Moisture','VOC','CO2'],color=df['Temeprature1','Humidity1','Temperature2','Humidity2','Soil Moisture','VOC','CO2'], width=700,height=900)
-
-#     # z= spectra_df['score'].plot()
-#     st.write(fig)
-
-# select= st.selectbox( '',('Temeprature1 & Humidity1','Temeprature2 & Humidity2' , 'SoilMoisture', 'VOC', 'CO2'), key='2')
-
-# if select == 'CO2':
-
-#     fig = px.scatter(df, x=df['CO2'], y=df['Date'], marginal_x="histogram", marginal_y="rug", width=700,height=900)
-
-#     # z= spectra_df['score'].plot()
-#     st.plotly_chart(fig)
-
-# select= st.selectbox( '',('Temeprature1 & Humidity1','Temeprature2 & Humidity2' , 'SoilMoisture', 'VOC', 'CO2'), key='3')
-
-# if select == 'Temeprature1 & Humidity1':
     
 pd.options.plotting.backend = "plotly"
 df.plot(x='Date', y=[ 'Temperature1','Humidity1','Temperature2','Humidity2','Soil Moisture','VOC','CO2'])
@@ -71,13 +40,6 @@ st.plotly_chart(fig)
     
 
 
-# select= st.selectbox( '',('Temeprature1 & Humidity1','Temeprature2 & Humidity2' , 'SoilMoisture', 'VOC', 'CO2'), key='4')
-# if select == 'Temeprature2 & Humidity2':
-#     pd.options.plotting.backend = "plotly"
-#     df.plot(x=[ 'Temperature2', 'Humidity2'], y='Date')
-#     df_melt = df.melt(id_vars='Date', value_vars=['Temperature2', 'Humidity2'])
-#     fig=px.line(df_melt, x='Date' , y='value' , color='variable')
-#     st.plotly_chart(fig)
 
 
 
@@ -114,5 +76,4 @@ fig.add_trace(go.Scatter(x=df['Date'], y=df['CO2'],
 
 
 
-# fig.show()
 st.write(fig)
